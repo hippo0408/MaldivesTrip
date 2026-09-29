@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGIWARA Family Maldives Honeymoon 2026 旅のしおり</title>
+    <!-- Chosen Palette: Ocean Turquoise, Coral Sunset, Crystal Lagoon & Sand White -->
+    <!-- Application Structure Plan: Fully responsive mobile-first honeymoon travel interactive app. Replaced photo gallery with a comprehensive "Resort Overview & Facilities" tab highlighting Pullman Maldives amenities including the 24/7 Fit Lounge gym, outdoor BootCamp, water sports, wellness facilities, and buggy navigation. Includes day-by-day interactive timeline with category tag filters, Changi transit guide, Pullman dining venues, Sunset Ocean Pool Villa features, and essential perks/tipping rules. -->
+    <!-- Visualization & Content Choices: Clean card-based responsive grids with logical icon groupings, mobile-first responsive utilities, smooth tab switching using Vanilla JS. Confirming NO SVG / NO Mermaid JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 35%, #fff1f2 70%, #f0fdf4 100%);
+            color: #0f172a;
+            min-height: 100vh;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .serif-font {
+            font-family: 'Playfair Display', 'Noto Sans JP', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(14, 116, 144, 0.75) 0%, rgba(13, 148, 136, 0.85) 60%, rgba(15, 23, 42, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .nav-tab.active {
+            background-color: #0d9488;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+        }
+        .day-tab.active {
+            background-color: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+        }
+        .filter-btn.active {
+            background-color: #f43f5e;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(244, 63, 94, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="py-3 px-2 sm:py-6 sm:px-6 lg:px-10">
+
+    <div class="max-w-5xl mx-auto space-y-4 sm:space-y-6">
+
+        <!-- Hero Header -->
+        <header class="hero-bg text-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-teal-300/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-rose-400/20 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-1.5 uppercase tracking-widest text-[10px] sm:text-xs font-bold bg-white/20 backdrop-blur-md px-3 py-1 rounded-full mb-3 border border-white/30">
+                    <span>🇲🇻 MALDIVES HONEYMOON ITINERARY 💍</span>
+                </div>
+                <h1 class="text-2xl sm:text-5xl font-extrabold tracking-tight mb-2 drop-shadow-md serif-font">
+                    KEISUKE & AYANO
+                </h1>
+                <p class="text-teal-100 text-xs sm:text-lg font-medium mb-4 sm:mb-6">
+                    プルマン モルディブ 新婚旅行 プレミアムガイド ＆ 旅のしおり
+                </p>
+
+                <div class="inline-block bg-slate-900/40 backdrop-blur-md rounded-2xl p-3.5 sm:p-5 border border-white/20 text-xs sm:text-sm text-left max-w-2xl mx-auto space-y-1.5 w-full">
+                    <div class="flex flex-wrap justify-between items-center border-b border-white/20 pb-2 mb-2 gap-1">
+                        <span class="font-bold text-amber-300 text-xs sm:text-base">🌴 プルマン モルディブ ムーマッタリゾート</span>
+                        <span class="text-[10px] sm:text-xs bg-teal-700/90 text-teal-100 px-2.5 py-0.5 rounded-full font-bold">6日間コース</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[11px] sm:text-xs text-slate-100">
+                        <p>• <strong>日程:</strong> 2026年10月10日(土) 〜 10月15日(木)</p>
+                        <p>• <strong>フライト:</strong> シンガポール航空 (SQ)</p>
+                        <p>• <strong>ヴィラ:</strong> サンセットオーシャンプールヴィラ</p>
+                        <p>• <strong>プラン:</strong> プレミアム オールインクルーシブ</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation Bar (Mobile Horizontally Scrollable) -->
+        <nav class="flex overflow-x-auto no-scrollbar gap-2 p-1.5 sm:p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-md border border-white/80 sticky top-2 z-40">
+            <button onclick="switchMainTab('schedule')" id="nav-schedule" class="nav-tab active shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center transition flex items-center justify-center gap-1.5">
+                <span>🗓️</span> スケジュール
+            </button>
+            <button onclick="switchMainTab('resort')" id="nav-resort" class="nav-tab shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center text-slate-700 transition flex items-center justify-center gap-1.5">
+                <span>🏝️</span> プルマンリゾート紹介
+            </button>
+            <button onclick="switchMainTab('changi')" id="nav-changi" class="nav-tab shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center text-slate-700 transition flex items-center justify-center gap-1.5">
+                <span>✈️</span> チャンギ空港
+            </button>
+            <button onclick="switchMainTab('dining')" id="nav-dining" class="nav-tab shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center text-slate-700 transition flex items-center justify-center gap-1.5">
+                <span>🍽️</span> グルメ＆バー
+            </button>
+            <button onclick="switchMainTab('room')" id="nav-room" class="nav-tab shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center text-slate-700 transition flex items-center justify-center gap-1.5">
+                <span>🏡</span> 水上ヴィラ
+            </button>
+            <button onclick="switchMainTab('info')" id="nav-info" class="nav-tab shrink-0 px-3.5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-center text-slate-700 transition flex items-center justify-center gap-1.5">
+                <span>🎁</span> 特典＆チップ
+            </button>
+        </nav>
+
+        <!-- Quick Travel Alert Banner -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+            <div class="glass-card rounded-2xl p-3 border-l-4 border-teal-500 shadow-sm flex items-center gap-3">
+                <span class="text-2xl shrink-0">⏰</span>
+                <div>
+                    <span class="font-bold text-teal-900 block text-xs sm:text-sm">リゾートの時差</span>
+                    <span class="text-slate-600 text-[11px] sm:text-xs">日本より <strong>-3時間</strong><br>(マレより+1時間のアイランドタイム)</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-3 border-l-4 border-rose-500 shadow-sm flex items-center gap-3">
+                <span class="text-2xl shrink-0">💵</span>
+                <div>
+                    <span class="font-bold text-rose-900 block text-xs sm:text-sm">チップ用 米ドル準備</span>
+                    <span class="text-slate-600 text-[11px] sm:text-xs">1$・5$札を多めに事前に準備！<br>(モルディブ現地空港で両替不可)</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-3 border-l-4 border-amber-500 shadow-sm flex items-center gap-3">
+                <span class="text-2xl shrink-0">📜</span>
+                <div>
+                    <span class="font-bold text-amber-900 block text-xs sm:text-sm">婚姻証明書の持参</span>
+                    <span class="text-slate-600 text-[11px] sm:text-xs">ハネムーン特典(ベッドデコ)適用に必須<br>※要チェックイン時提示</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 1: SCHEDULE & TIMELINE -->
+        <div id="section-schedule" class="tab-content space-y-4 sm:space-y-6">
+
+            <!-- Flight Connection Cards Section -->
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg sm:text-2xl font-bold text-teal-950 flex items-center gap-2">
+                        <span>✈️</span> フライト＆アクセス
+                    </h2>
+                    <span class="text-[10px] sm:text-xs bg-teal-100 text-teal-800 font-bold px-2.5 py-1 rounded-full">SQ便（シンガポール航空）</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    
+                    <!-- Flight 1 -->
+                    <div class="bg-gradient-to-br from-teal-900 to-teal-800 text-white p-4 sm:p-5 rounded-2xl shadow-md border border-teal-700">
+                        <div class="flex justify-between items-center text-[10px] sm:text-xs text-teal-200 font-semibold mb-2">
+                            <span>往路 1/2 • SQ 637便</span>
+                            <span>10/10(土) 集合 08:55</span>
+                        </div>
+                        <div class="flex justify-between items-center my-1.5">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-black">成田 NRT</div>
+                                <div class="text-[10px] sm:text-xs text-teal-200">第1ターミナル 10:55発</div>
+                            </div>
+                            <div class="text-center text-[10px] sm:text-xs text-teal-300 px-1">✈️ 7h 00m</div>
+                            <div class="text-right">
+                                <div class="text-xl sm:text-2xl font-black">シンガポール SIN</div>
+                                <div class="text-[10px] sm:text-xs text-teal-200">16:55着</div>
+                            </div>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-teal-700/60 text-[10px] sm:text-[11px] text-teal-200 flex justify-between">
+                            <span>乗継時間: 3時間30分</span>
+                            <span>成田南ウィング4F集合</span>
+                        </div>
+                    </div>
+
+                    <!-- Flight 2 -->
+                    <div class="bg-gradient-to-br from-teal-900 to-teal-800 text-white p-4 sm:p-5 rounded-2xl shadow-md border border-teal-700">
+                        <div class="flex justify-between items-center text-[10px] sm:text-xs text-teal-200 font-semibold mb-2">
+                            <span>往路 2/2 • SQ 438便</span>
+                            <span>10/10(土) 夜便</span>
+                        </div>
+                        <div class="flex justify-between items-center my-1.5">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-black">シンガポール SIN</div>
+                                <div class="text-[10px] sm:text-xs text-teal-200">20:25発</div>
+                            </div>
+                            <div class="text-center text-[10px] sm:text-xs text-teal-300 px-1">✈️ 4h 25m</div>
+                            <div class="text-right">
+                                <div class="text-xl sm:text-2xl font-black">マレ MLE</div>
+                                <div class="text-[10px] sm:text-xs text-teal-200">21:50着</div>
+                            </div>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-teal-700/60 text-[10px] sm:text-[11px] text-teal-200 flex justify-between">
+                            <span>荷物: マレまでスルー受取</span>
+                            <span>送迎車(10分)でフルマーレへ</span>
+                        </div>
+                    </div>
+
+                    <!-- Flight 3 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-md border border-slate-700">
+                        <div class="flex justify-between items-center text-[10px] sm:text-xs text-slate-300 font-semibold mb-2">
+                            <span>復路 1/2 • SQ 437便</span>
+                            <span>10/14(水) 機内夜泊</span>
+                        </div>
+                        <div class="flex justify-between items-center my-1.5">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-black">マレ MLE</div>
+                                <div class="text-[10px] sm:text-xs text-slate-300">23:10発</div>
+                            </div>
+                            <div class="text-center text-[10px] sm:text-xs text-slate-400 px-1">✈️ 5h 00m</div>
+                            <div class="text-right">
+                                <div class="text-xl sm:text-2xl font-black">シンガポール SIN</div>
+                                <div class="text-[10px] sm:text-xs text-slate-300">翌 07:10着</div>
+                            </div>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-slate-700/60 text-[10px] sm:text-[11px] text-slate-300 flex justify-between">
+                            <span>12時OUT後もAI利用可</span>
+                            <span>乗継時間: 2時間15分</span>
+                        </div>
+                    </div>
+
+                    <!-- Flight 4 -->
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-md border border-slate-700">
+                        <div class="flex justify-between items-center text-[10px] sm:text-xs text-slate-300 font-semibold mb-2">
+                            <span>復路 2/2 • SQ 12便</span>
+                            <span>10/15(木) 帰国日</span>
+                        </div>
+                        <div class="flex justify-between items-center my-1.5">
+                            <div>
+                                <div class="text-xl sm:text-2xl font-black">シンガポール SIN</div>
+                                <div class="text-[10px] sm:text-xs text-slate-300">09:25発</div>
+                            </div>
+                            <div class="text-center text-[10px] sm:text-xs text-slate-400 px-1">✈️ 7h 05m</div>
+                            <div class="text-right">
+                                <div class="text-xl sm:text-2xl font-black">成田 NRT</div>
+                                <div class="text-[10px] sm:text-xs text-slate-300">17:30着</div>
+                            </div>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-slate-700/60 text-[10px] sm:text-[11px] text-slate-300 flex justify-between">
+                            <span>到着後順次解散</span>
+                            <span>思い出と共に帰宅</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hotel Stay Summary Cards -->
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-teal-50 rounded-2xl border border-teal-200 flex gap-3 items-center">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80" alt="Hulhumale Hotel" class="w-16 h-16 rounded-xl object-cover shrink-0">
+                        <div>
+                            <span class="text-[10px] font-bold bg-teal-700 text-white px-2 py-0.5 rounded">1泊目前泊</span>
+                            <h3 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">ホテル オーシャングランド</h3>
+                            <p class="text-slate-600 text-[11px]">フルマーレ / デラックスルーム（朝食付）</p>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-rose-50 rounded-2xl border border-rose-200 flex gap-3 items-center">
+                        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=300&q=80" alt="Pullman Maldives" class="w-16 h-16 rounded-xl object-cover shrink-0">
+                        <div>
+                            <span class="text-[10px] font-bold bg-rose-600 text-white px-2 py-0.5 rounded">2〜4泊目メイン滞在</span>
+                            <h3 class="font-bold text-slate-900 text-xs sm:text-sm mt-0.5">プルマン モルディブ</h3>
+                            <p class="text-slate-600 text-[11px]">サンセットオーシャンプールヴィラ（オールインクルーシブ）</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Day-by-Day Itinerary -->
+            <section class="space-y-3.5">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-teal-950 flex items-center gap-2">
+                            <span>🗓️</span> 旅のタイムスケジュール
+                        </h2>
+                        <p class="text-[11px] sm:text-xs text-slate-600">日付や目的別タグで簡単に絞り込めます</p>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="flex overflow-x-auto no-scrollbar gap-1.5 text-xs w-full md:w-auto py-1">
+                        <button onclick="filterCategory('all')" id="filter-all" class="filter-btn active shrink-0 px-3 py-1.5 rounded-full font-bold bg-slate-200 text-slate-700 transition">すべて</button>
+                        <button onclick="filterCategory('yoga')" id="filter-yoga" class="filter-btn shrink-0 px-3 py-1.5 rounded-full font-bold bg-emerald-100 text-emerald-800 transition">🧘‍♀️ ヨガ</button>
+                        <button onclick="filterCategory('dining')" id="filter-dining" class="filter-btn shrink-0 px-3 py-1.5 rounded-full font-bold bg-amber-100 text-amber-800 transition">🍽️ お食事＆バー</button>
+                        <button onclick="filterCategory('activity')" id="filter-activity" class="filter-btn shrink-0 px-3 py-1.5 rounded-full font-bold bg-sky-100 text-sky-800 transition">🥽 海＆アクティビティ</button>
+                        <button onclick="filterCategory('perk')" id="filter-perk" class="filter-btn shrink-0 px-3 py-1.5 rounded-full font-bold bg-rose-100 text-rose-800 transition">✨ スパ＆特典</button>
+                    </div>
+                </div>
+
+                <!-- Day Tabs -->
+                <div class="flex overflow-x-auto no-scrollbar gap-1.5 p-1.5 bg-slate-200/80 backdrop-blur-md rounded-2xl">
+                    <button onclick="showDay('all')" id="day-all" class="day-tab active shrink-0 min-w-[60px] py-1.5 px-3 rounded-xl font-bold text-xs text-center transition">全日程</button>
+                    <button onclick="showDay(1)" id="day-1" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/10(土)<br><span class="text-[9px] opacity-80">Day 1</span></button>
+                    <button onclick="showDay(2)" id="day-2" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/11(日)<br><span class="text-[9px] opacity-80">Day 2</span></button>
+                    <button onclick="showDay(3)" id="day-3" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/12(月)<br><span class="text-[9px] opacity-80">Day 3</span></button>
+                    <button onclick="showDay(4)" id="day-4" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/13(火)<br><span class="text-[9px] opacity-80">Day 4</span></button>
+                    <button onclick="showDay(5)" id="day-5" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/14(水)<br><span class="text-[9px] opacity-80">Day 5</span></button>
+                    <button onclick="showDay(6)" id="day-6" class="day-tab shrink-0 min-w-[70px] py-1.5 px-2.5 rounded-xl font-bold text-xs text-center transition">10/15(木)<br><span class="text-[9px] opacity-80">Day 6</span></button>
+                </div>
+
+                <!-- Schedule Cards -->
+                <div id="schedule-container" class="space-y-4">
+
+                    <!-- DAY 1 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-teal-600" data-day="1">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-teal-700 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 1</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月10日 (土) : 出発 ＆ マレ前泊</h3>
+                            </div>
+                            <span class="text-[11px] font-semibold text-slate-500">フルマーレ泊</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-teal-800 min-w-[70px] sm:min-w-[80px]">08:55</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">📍 成田空港 第1ターミナル 南ウィング4F 集合</span>
+                                    <p class="text-slate-500 text-[11px]">シンガポール航空カウンターにてEチケットとパスポートを提示しチェックイン。</p>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-teal-800 min-w-[70px] sm:min-w-[80px]">10:55 - 16:55</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛫 SQ 637便でシンガポールへ</span>
+                                    <p class="text-slate-500 text-[11px]">機内食と最新エンタメを楽しみながら快適なフライト（飛行時間7時間）。</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">16:55 - 20:25</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛍️ チャンギ国際空港にて乗継散策 (3時間30分)</span>
+                                    <p class="text-slate-500 text-[11px]">TWG Teaのお買い物やジュエル（Jewel）の巨大滝などを鑑賞。</p>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-teal-800 min-w-[70px] sm:min-w-[80px]">20:25 - 21:50</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛫 SQ 438便でモルディブ・マレへ</span>
+                                    <p class="text-slate-500 text-[11px]">21:50 マーレ・ヴェラナ国際空港到着。入国審査・手荷物受け取り。</p>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-teal-800 min-w-[70px] sm:min-w-[80px]">22:30頃</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🏨 送迎車(約10分)でホテルへ移動＆チェックイン</span>
+                                    <p class="text-slate-500 text-[11px]">「ホテル オーシャングランド アット フルマーレ」泊。翌朝移動に備えてゆっくり睡眠。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DAY 2 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-teal-500" data-day="2">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-teal-600 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 2</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月11日 (日) : プルマン到着・水上ヴィラへ</h3>
+                            </div>
+                            <span class="text-[11px] font-bold text-teal-700">プルマン1日目</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">朝</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🍳 ホテルで朝食 ＆ 空港へ移動</span>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-teal-800 min-w-[70px] sm:min-w-[80px]">午前</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">✈️ 国内線 ＋ スピードボートでプルマンへ</span>
+                                    <p class="text-slate-500 text-[11px]">クードゥー空港経由で南国の楽園プルマンモルディブ島へ上陸！</p>
+                                </div>
+                            </li>
+                            <li data-cat="perk" class="flex items-start gap-2.5">
+                                <span class="font-bold text-rose-600 min-w-[70px] sm:min-w-[80px]">チェックイン</span>
+                                <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-rose-900">💍 チェックイン時に結婚証明書を提示</span>
+                                    <p class="text-rose-800 text-[11px] font-medium mt-0.5">憧れの「サンセットオーシャンプールヴィラ」へご案内。ハネムーンベッドデコレーションを満喫！</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">16:30 - 17:00</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">💨 Saffron Affairでシーシャタイム</span>
+                                    <p class="text-slate-500 text-[11px]">海に浮かぶ水上ラウンジでシーシャとドリンクを堪能。</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">17:30 - 18:30</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🌅 Saffron Affairでサンセットカクテル</span>
+                                    <p class="text-slate-500 text-[11px]">水上ハンモックから夕日を眺めながらロマンティックな乾杯。</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">19:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🍽️ ディナー @ Souq Oven (地中海・アラビック)</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DAY 3 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-cyan-500" data-day="3">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-cyan-600 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 3</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月12日 (月) : ヨガ・シュノーケル ＆ スパ</h3>
+                            </div>
+                            <span class="text-[11px] font-bold text-cyan-700">プルマン2日目</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="yoga" class="flex items-start gap-2.5">
+                                <span class="font-bold text-emerald-800 min-w-[70px] sm:min-w-[80px]">06:00 - 07:00</span>
+                                <div class="bg-emerald-50 border border-emerald-200 p-2 rounded-xl w-full">
+                                    <span class="font-bold text-emerald-900">🧘‍♀️ サンライズヨガ @ Sol Rising</span>
+                                    <p class="text-emerald-800 text-[11px]">海にせり出した水上デッキで朝日と共に爽やかヨガ。</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">07:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🍳 モーニング @ Sol Rising</span>
+                                </div>
+                            </li>
+                            <li data-cat="activity" class="flex items-start gap-2.5">
+                                <span class="font-bold text-sky-800 min-w-[70px] sm:min-w-[80px]">11:00〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">⛳ シミュレーションゴルフ @ Skills</span>
+                                    <p class="text-slate-500 text-[11px]">インドアゴルフマシンで爽快スイング（要予約）。</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">12:00〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🥗 ランチ @ Mélange</span>
+                                </div>
+                            </li>
+                            <li data-cat="activity" class="flex items-start gap-2.5">
+                                <span class="font-bold text-sky-800 min-w-[70px] sm:min-w-[80px]">14:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🥽 シュノーケルツアー</span>
+                                    <p class="text-slate-500 text-[11px]">ハウスリーフで熱帯魚やウミガメ探索（ギア無料レンタル）。</p>
+                                </div>
+                            </li>
+                            <li data-cat="perk" class="flex items-start gap-2.5">
+                                <span class="font-bold text-rose-600 min-w-[70px] sm:min-w-[80px]">16:00 - 17:00</span>
+                                <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-rose-900">💆‍♀️ 【特典】45分 スパトリートメント @ Spa by Phytomer</span>
+                                    <p class="text-rose-800 text-[11px] font-medium">波の音に包まれた水上スパで極上のリフレッシュタイム！（要予約）</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">18:00〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🌅 サンセット @ Saffron Affair</span>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">18:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🍽️ ディナー @ Mélange</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DAY 4 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-cyan-500" data-day="4">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-cyan-600 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 4</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月13日 (火) : フローティング朝食 ＆ ドルフィン</h3>
+                            </div>
+                            <span class="text-[11px] font-bold text-cyan-700">プルマン3日目</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="yoga" class="flex items-start gap-2.5">
+                                <span class="font-bold text-emerald-800 min-w-[70px] sm:min-w-[80px]">06:30 - 07:30</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🧘‍♀️ サンライズヨガ @ Main Pool</span>
+                                </div>
+                            </li>
+                            <li data-cat="perk" class="flex items-start gap-2.5">
+                                <span class="font-bold text-rose-600 min-w-[70px] sm:min-w-[80px]">08:00〜</span>
+                                <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-rose-900">🥂 【特典】フローティングブレックファースト</span>
+                                    <p class="text-rose-800 text-[11px] font-medium">ヴィラのプールで憧れの映え写真＆優雅な朝食体験！</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">12:00〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🍝 ランチ @ Souq Oven</span>
+                                </div>
+                            </li>
+                            <li data-cat="perk" class="flex items-start gap-2.5">
+                                <span class="font-bold text-rose-600 min-w-[70px] sm:min-w-[80px]">17:30 - 18:30</span>
+                                <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-rose-900">🐬 【特典】サンセット・ドルフィンクルーズ</span>
+                                    <p class="text-rose-800 text-[11px] font-medium">イルカの群れを探しながら夕日と船上ドリンクを楽しむ絶景クルーズ！</p>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">19:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🌿 ディナー @ Phat Chameleon</span>
+                                    <p class="text-slate-500 text-[11px]">ハーブ園に囲まれたロマンティックなオーガニックコース。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DAY 5 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-indigo-500" data-day="5">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-indigo-600 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 5</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月14日 (水) : 最終滞在日 ＆ 帰国の途へ</h3>
+                            </div>
+                            <span class="text-[11px] font-bold text-indigo-700">機内夜泊</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="yoga" class="flex items-start gap-2.5">
+                                <span class="font-bold text-emerald-800 min-w-[70px] sm:min-w-[80px]">06:00 - 07:00</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🧘‍♀️ サンライズヨガ @ Sol Rising</span>
+                                </div>
+                            </li>
+                            <li data-cat="dining" class="flex items-start gap-2.5">
+                                <span class="font-bold text-amber-700 min-w-[70px] sm:min-w-[80px]">07:30〜</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🥐 モーニング @ Mélange</span>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-indigo-800 min-w-[70px] sm:min-w-[80px]">12:00</span>
+                                <div class="bg-slate-100 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-slate-900">🧳 OUT ＆ Souq Ovenでランチ</span>
+                                    <p class="text-slate-500 text-[11px]">お部屋は12:00まで。チェックアウト後も出発までオールインクルーシブ施設を自由に利用可！</p>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-indigo-800 min-w-[70px] sm:min-w-[80px]">夕方</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛥️ スピードボート ＋ 国内線でマレ空港へ</span>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-indigo-800 min-w-[70px] sm:min-w-[80px]">23:10</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛫 SQ 437便でシンガポールへ (機内泊)</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DAY 6 -->
+                    <div class="day-card glass-card rounded-2xl p-4 sm:p-5 shadow-md border-l-4 border-indigo-500" data-day="6">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-200">
+                            <div>
+                                <span class="bg-indigo-600 text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full">Day 6</span>
+                                <h3 class="inline-block text-sm sm:text-lg font-bold text-slate-800 ml-1.5">10月15日 (木) : 成田無事到着</h3>
+                            </div>
+                            <span class="text-[11px] font-bold text-slate-500">帰国日</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-slate-800 min-w-[70px] sm:min-w-[80px]">07:10</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛬 シンガポール・チャンギ空港到着</span>
+                                    <p class="text-slate-500 text-[11px]">乗継手続き＆搭乗ゲート確認（乗継時間 2時間15分）。</p>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-slate-800 min-w-[70px] sm:min-w-[80px]">09:25 - 17:30</span>
+                                <div>
+                                    <span class="font-bold text-slate-900">🛫 SQ 12便で成田へ</span>
+                                </div>
+                            </li>
+                            <li data-cat="flight" class="flex items-start gap-2.5">
+                                <span class="font-bold text-rose-600 min-w-[70px] sm:min-w-[80px]">17:30</span>
+                                <div class="bg-rose-50 border border-rose-200 p-2.5 rounded-xl w-full">
+                                    <span class="font-bold text-rose-900 text-sm sm:text-base">🎉 成田国際空港 到着・解散</span>
+                                    <p class="text-rose-800 text-[11px] mt-0.5">かけがえのない思い出と共に無事帰宅！お疲れ様でした💕</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: RESORT OVERVIEW & FACILITIES (REPLACED PHOTO GALLERY) -->
+        <div id="section-resort" class="tab-content hidden space-y-4 sm:space-y-6">
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-5">
+                <div>
+                    <span class="text-[10px] sm:text-xs font-extrabold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">PULLMAN MALDIVES MAAMUTAA OVERVIEW</span>
+                    <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">
+                        🏝️ プルマン モルディブ リゾート＆施設案内
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        モルディブ南部ガーフアリフ環礁の広大な自然島「マームッタ島」。手つかずの自然と最新フィットネス・アクティビティ施設が融合した最高峰リゾートです。
+                    </p>
+                </div>
+
+                <!-- Island Features Header Banner -->
+                <div class="relative rounded-2xl overflow-hidden h-44 sm:h-56 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80" alt="Pullman Maamutaa Island" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent p-4 sm:p-6 flex flex-col justify-end text-white">
+                        <span class="text-amber-300 font-bold text-xs uppercase tracking-wider">🌿 18ヘクタールの豊かな自然島</span>
+                        <h3 class="text-lg sm:text-2xl font-extrabold">「Up Your Game」体を動かす喜びと極上のリラックス</h3>
+                    </div>
+                </div>
+
+                <!-- Key Resort Highlights Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+
+                    <!-- Fitness & Gym Features (Highlighted) -->
+                    <div class="p-4 sm:p-5 bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl border-2 border-teal-300 shadow-sm space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🏋️‍♂️</span>
+                            <div>
+                                <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">24時間営業 フィットネスジム & Fit Lounge</h3>
+                                <span class="text-[10px] font-bold bg-teal-200 text-teal-900 px-2 py-0.5 rounded">モルディブ有数の充実設備</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">
+                            最新の有酸素マシン、フリーウェイト、筋トレマシンを完全完備。エアコン完備の快適な室内で24時間いつでもワークアウト可能！
+                        </p>
+                        <ul class="space-y-1 text-[11px] text-teal-900 font-medium bg-white/80 p-2.5 rounded-xl border border-teal-100">
+                            <li>• <strong>RSTA Outdoor Bootcamp:</strong> ビーチ沿いの屋外障害物コース</li>
+                            <li>• <strong>ボルダリング壁:</strong> インドアクライミングウォール完備</li>
+                            <li>• <strong>パーソナルトレーニング:</strong> プロのトレーナーが常駐</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sports & Skills -->
+                    <div class="p-4 sm:p-5 bg-gradient-to-br from-sky-50 to-blue-50 rounded-2xl border border-sky-200 shadow-sm space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🎾</span>
+                            <div>
+                                <h3 class="font-extrabold text-sky-950 text-sm sm:text-base">スポーツ＆エンタメ施設 (Skills)</h3>
+                                <span class="text-[10px] font-bold bg-sky-200 text-sky-900 px-2 py-0.5 rounded">雨の日も安心のインドアアクティビティ</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">
+                            「Skillz」プレイルームには最新のゴルフシミュレーター、カラオケルーム、卓球、ボードゲーム、PlayStation 5を完備！
+                        </p>
+                        <ul class="space-y-1 text-[11px] text-sky-900 font-medium bg-white/80 p-2.5 rounded-xl border border-sky-100">
+                            <li>• <strong>全天候型テニスコート:</strong> ナイター設備あり</li>
+                            <li>• <strong>ビーチバレーコート:</strong> パウダースノーの白砂でプレイ</li>
+                            <li>• <strong>シミュレーションゴルフ:</strong> 世界の名コースに挑戦</li>
+                        </ul>
+                    </div>
+
+                    <!-- Water Sports & Diving -->
+                    <div class="p-4 sm:p-5 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border border-cyan-200 shadow-sm space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🥽</span>
+                            <div>
+                                <h3 class="font-extrabold text-cyan-950 text-sm sm:text-base">ウォータースポーツ & 豊かなハウスリーフ</h3>
+                                <span class="text-[10px] font-bold bg-cyan-200 text-cyan-900 px-2 py-0.5 rounded">PADIダイビングセンター併設</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">
+                            手つかずのサンゴ礁が残るガーフアリフ独立環礁。ウミガメやベビーシャーク、色鮮やかな熱帯魚がヴィラ近くで泳いでいます。
+                        </p>
+                        <ul class="space-y-1 text-[11px] text-cyan-900 font-medium bg-white/80 p-2.5 rounded-xl border border-cyan-100">
+                            <li>• <strong>無料レンタル:</strong> SUP、カヤック（毎日1時間無料）</li>
+                            <li>• <strong>シュノーケルギア:</strong> 滞在中無料貸出（フィン・マスク）</li>
+                            <li>• <strong>モーターマリンスポーツ:</strong> ジェットスキー、ウィンドサーフィン等</li>
+                        </ul>
+                    </div>
+
+                    <!-- Spa & Wellness -->
+                    <div class="p-4 sm:p-5 bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl border border-rose-200 shadow-sm space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">💆‍♀️</span>
+                            <div>
+                                <h3 class="font-extrabold text-rose-950 text-sm sm:text-base">Spa by Phytomer & ヨガデッキ</h3>
+                                <span class="text-[10px] font-bold bg-rose-200 text-rose-900 px-2 py-0.5 rounded">フランス高級海洋化粧品使用</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 text-xs leading-relaxed">
+                            海の上に浮かぶ水上スパトリートメントルーム。床の一部がガラス張りになっており、マッサージを受けながら魚を楽しめます。
+                        </p>
+                        <ul class="space-y-1 text-[11px] text-rose-900 font-medium bg-white/80 p-2.5 rounded-xl border border-rose-100">
+                            <li>• <strong>サンライズ・サンセットヨガ:</strong> 水上デッキで毎朝夕開催</li>
+                            <li>• <strong>フィトメールプロダクト:</strong> 海洋成分で肌を優しくケア</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Island Environment & Transportation Info -->
+                <div class="bg-amber-50/80 rounded-2xl p-4 border border-amber-200 space-y-2">
+                    <h3 class="font-bold text-amber-950 text-xs sm:text-sm flex items-center gap-2">
+                        <span>🛺</span> 島内の広さとバギーサービスについて
+                    </h3>
+                    <p class="text-slate-700 text-xs">
+                        プルマンが位置するマームッタ島は、徒歩で1周約30分ほどの自然豊かな大きめの島です。中央には淡水湖やオーガニックハーブ園が広がっています。
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-amber-900 font-medium mt-1">
+                        <div class="bg-white/90 p-2 rounded-xl border border-amber-200">
+                            <strong>• 24時間バギー送迎:</strong> アプリやヴィラのお電話からバギー（カート）を呼べば、島内どこへでもお迎えに来てくれます。
+                        </div>
+                        <div class="bg-white/90 p-2 rounded-xl border border-amber-200">
+                            <strong>• 散策＆レンタル自転車:</strong> 木々に囲まれた木漏れ日の小道は散策やジョギングコースにもぴったりです。
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- TAB 3: CHANGI AIRPORT GUIDE -->
+        <div id="section-changi" class="tab-content hidden space-y-4 sm:space-y-6">
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-5">
+                <div>
+                    <span class="text-[10px] sm:text-xs font-extrabold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">SINGAPORE CHANGI AIRPORT (SIN)</span>
+                    <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">
+                        ✈️ チャンギ国際空港 トランジット完全攻略
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        往路（10/10 3.5時間）と復路（10/15 2時間15分）の乗り継ぎ時間を最大活用！おすすめお土産とグルメ。
+                    </p>
+                </div>
+
+                <!-- Changi Jewel Banner Image -->
+                <div class="relative rounded-2xl overflow-hidden h-40 sm:h-52 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80" alt="Changi Jewel" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent p-4 flex flex-col justify-end text-white">
+                        <span class="text-amber-300 font-bold text-xs">✨ 空港直結の超巨大複合施設</span>
+                        <h3 class="text-base sm:text-xl font-extrabold">Jewel (ジュエル) Rain Vortex</h3>
+                    </div>
+                </div>
+
+                <!-- Transit Time Info Banner -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                    <div class="bg-teal-900 text-white p-3.5 sm:p-4 rounded-2xl">
+                        <span class="text-amber-300 font-bold block text-xs">往路: 10/10(土) 16:55〜20:25 (約3.5時間)</span>
+                        <p class="text-teal-100 text-[11px] sm:text-xs mt-1">時間にゆとりがあるため「ジュエル（Jewel）」へ移動して巨大滝の鑑賞やお買い物が楽しめます。</p>
+                    </div>
+                    <div class="bg-slate-800 text-white p-3.5 sm:p-4 rounded-2xl">
+                        <span class="text-sky-300 font-bold block text-xs">復路: 10/15(木) 07:10〜09:25 (約2時間15分)</span>
+                        <p class="text-slate-300 text-[11px] sm:text-xs mt-1">早朝のため制限エリア内（TWG, Bacha Coffee）で効率的にお土産を購入するのがベストです。</p>
+                    </div>
+                </div>
+
+                <!-- Recommended Souvenirs Section -->
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-teal-950 mb-3 flex items-center gap-2">
+                        <span>🎁</span> チャンギ空港おすすめのお土産 5選
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                        
+                        <div class="p-3.5 bg-amber-50/80 rounded-2xl border border-amber-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-amber-950 text-sm">☕ TWG Tea（高級紅茶）</h4>
+                                <span class="bg-amber-200 text-amber-900 text-[9px] font-bold px-1.5 py-0.5 rounded">T1/T2/T3/Jewel</span>
+                            </div>
+                            <p class="text-slate-700 text-[11px] mt-1">
+                                シンガポール発ラグジュアリーティー。1837 Black Teaや限定缶が人気。お配りギフトに最適。
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 bg-orange-50/80 rounded-2xl border border-orange-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-orange-950 text-sm">☕ Bacha Coffee</h4>
+                                <span class="bg-orange-200 text-orange-900 text-[9px] font-bold px-1.5 py-0.5 rounded">T1/T3/T4</span>
+                            </div>
+                            <p class="text-slate-700 text-[11px] mt-1">
+                                モロッコ発のきらびやかなコーヒー専門店。個包装ドリップバッグセットが新婚旅行のお土産に大人気。
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 bg-purple-50/80 rounded-2xl border border-purple-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-purple-950 text-sm">🍫 Janice Wong</h4>
+                                <span class="bg-purple-200 text-purple-900 text-[9px] font-bold px-1.5 py-0.5 rounded">Jewel / T3</span>
+                            </div>
+                            <p class="text-slate-700 text-[11px] mt-1">
+                                まるで宝石のような美しいアート感覚ボンボンショコラ。おしゃれで写真映え抜群！
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 bg-rose-50/80 rounded-2xl border border-rose-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-rose-950 text-sm">🍰 Bengawan Solo</h4>
+                                <span class="bg-rose-200 text-rose-900 text-[9px] font-bold px-1.5 py-0.5 rounded">T1/T3/Jewel</span>
+                            </div>
+                            <p class="text-slate-700 text-[11px] mt-1">
+                                伝統菓子店。「パンダン・シフォンケーキ」や濃厚な「パイナップルタルト」が地元で愛されています。
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 bg-yellow-50/80 rounded-2xl border border-yellow-200">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-yellow-950 text-sm">🥔 IRVINS Salted Egg</h4>
+                                <span class="bg-yellow-200 text-yellow-900 text-[9px] font-bold px-1.5 py-0.5 rounded">T2/T3/Jewel</span>
+                            </div>
+                            <p class="text-slate-700 text-[11px] mt-1">
+                                中毒性の高い高級ソルテッドエッグポテトチップス。おつまみにもぴったり！
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- TAB 4: PULLMAN RESTAURANTS & BARS GUIDE -->
+        <div id="section-dining" class="tab-content hidden space-y-4 sm:space-y-6">
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-5">
+                <div>
+                    <span class="text-[10px] sm:text-xs font-extrabold text-teal-700 bg-teal-100 px-3 py-1 rounded-full">ALL-INCLUSIVE DINING GUIDE</span>
+                    <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">
+                        🍽️ プルマンモルディブ レストラン＆バー完全ガイド
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        オールインクルーシブで楽しめる島内6つのダイニングスポット。追加料金を気にせず世界の美食を満喫！
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+
+                    <!-- Mélange -->
+                    <div class="p-4 bg-gradient-to-br from-amber-50 to-orange-50/60 rounded-2xl border border-amber-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-amber-800 text-white px-2 py-0.5 rounded">メインダイニング</span>
+                                <h3 class="text-base font-extrabold text-amber-950 mt-1">Mélange (メランジュ)</h3>
+                            </div>
+                            <span class="text-amber-800 font-bold text-[11px]">朝・昼・夕食</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            ビーチに面した開放的なビュッフェ。アラビア、イタリア、中国、インド、モルディブ料理等のライブステーションが並びます。
+                        </p>
+                    </div>
+
+                    <!-- Sol Rising -->
+                    <div class="p-4 bg-gradient-to-br from-teal-50 to-sky-50/60 rounded-2xl border border-teal-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-teal-800 text-white px-2 py-0.5 rounded">水上カフェ＆バー</span>
+                                <h3 class="text-base font-extrabold text-teal-950 mt-1">Sol Rising (ソルライジング)</h3>
+                            </div>
+                            <span class="text-teal-800 font-bold text-[11px]">朝食 / カフェ / バー</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            東側の海に張り出した水上デッキ。ヘルシー朝食、スーパーフード、本格コーヒー、夕方からはカキやシャンパンを楽しめます。
+                        </p>
+                    </div>
+
+                    <!-- Souq Oven -->
+                    <div class="p-4 bg-gradient-to-br from-indigo-50 to-purple-50/60 rounded-2xl border border-indigo-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-indigo-800 text-white px-2 py-0.5 rounded">水上ファインダイニング</span>
+                                <h3 class="text-base font-extrabold text-indigo-950 mt-1">Souq Oven (スーク・オーブン)</h3>
+                            </div>
+                            <span class="text-indigo-800 font-bold text-[11px]">昼食 / 夕食</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            ラグーンの上に建つ地中海＆中東料理。窯焼きピッツァやパスタと共に、80種類以上の世界の上質ワインを堪能できます。
+                        </p>
+                    </div>
+
+                    <!-- Phat Chameleon -->
+                    <div class="p-4 bg-gradient-to-br from-emerald-50 to-green-50/60 rounded-2xl border border-emerald-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-emerald-800 text-white px-2 py-0.5 rounded">オーガニックガーデン</span>
+                                <h3 class="text-base font-extrabold text-emerald-950 mt-1">Phat Chameleon (ファット・カメレオン)</h3>
+                            </div>
+                            <span class="text-emerald-800 font-bold text-[11px]">夕食 (要予約)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            モルディブ初、オーガニック自家菜園の中のベジタリアン＆ヴィーガンレストラン。獲れたてハーブを活かした創作コース。
+                        </p>
+                    </div>
+
+                    <!-- Saffron Affair -->
+                    <div class="p-4 bg-gradient-to-br from-rose-50 to-pink-50/60 rounded-2xl border border-rose-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-rose-800 text-white px-2 py-0.5 rounded">水上サンセットラウンジ</span>
+                                <h3 class="text-base font-extrabold text-rose-950 mt-1">Saffron Affair (サフラン・フェア)</h3>
+                            </div>
+                            <span class="text-rose-800 font-bold text-[11px]">夕方〜夜 (タパス＆バー)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            水上ハンモックネットが特徴的なラウンジ。夕日を眺めながらタパスをつまみ、カクテルやシーシャ（水タバコ）をゆったり満喫。
+                        </p>
+                    </div>
+
+                    <!-- The Hub -->
+                    <div class="p-4 bg-gradient-to-br from-sky-50 to-blue-50/60 rounded-2xl border border-sky-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] font-bold bg-sky-800 text-white px-2 py-0.5 rounded">メインプールバー</span>
+                                <h3 class="text-base font-extrabold text-sky-950 mt-1">The Hub (ザ・ハブ)</h3>
+                            </div>
+                            <span class="text-sky-800 font-bold text-[11px]">終日 (ドリンク＆軽食)</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">
+                            メインプール横のバー。カクテルや特製アイスクリームのほか、夜にはライブ演奏が行われる賑やかなスポットです。
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 5: ROOM GUIDE - SUNSET OCEAN POOL VILLA -->
+        <div id="section-room" class="tab-content hidden space-y-4 sm:space-y-6">
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-5">
+                <div>
+                    <span class="text-[10px] sm:text-xs font-extrabold text-rose-700 bg-rose-100 px-3 py-1 rounded-full">YOUR LUXURY OVERWATER VILLA</span>
+                    <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">
+                        🏡 サンセットオーシャンプールヴィラ 特徴ガイド
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                        ラグーンの上に佇む究極の水上ヴィラ。刻々と変わる夕日と海を独り占めできる最高峰のお部屋です。
+                    </p>
+                </div>
+
+                <!-- Villa Feature Cover Image -->
+                <div class="relative rounded-2xl overflow-hidden h-44 sm:h-64 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=80" alt="Villa Infinity Pool" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end text-white">
+                        <span class="text-teal-300 font-bold text-xs">プライベートプール＆サンセットテラス完備</span>
+                        <h3 class="text-base sm:text-2xl font-black">Sunset Ocean Pool Villa</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🌅</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">最高のサンセットロケーション</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                西側に面した最高の配置。プライベートデッキから水平線に沈む黄金色の夕日を堪能できます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🏊‍♀️</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">専用インフィニティプール付き</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                デッキにはプールを完備。目の前のエメラルドグリーンの海と一体化する幻想的なスイミング体験。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🥽</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">海へのダイレクトアクセス</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                デッキの階段から直接海へ飛び込めます！いつでも好きな時にシュノーケリング。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🐠</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">床下のガラス床（水中鑑賞）</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                お部屋の床の一部が透明ガラスになっており、室内から泳ぐ熱帯魚を観察可能。夜はライトアップ！
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🍷</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">毎日無料補充のミニバー</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                オールインクルーシブでミニバー（ワイン、ビール、各種スナック等）が毎日無料で補充されます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/90 rounded-2xl border border-teal-200 shadow-sm flex items-start gap-3">
+                        <span class="text-2xl shrink-0">🛁</span>
+                        <div>
+                            <h3 class="font-extrabold text-teal-950 text-sm sm:text-base">深めのゆったりバスタブ</h3>
+                            <p class="text-slate-600 text-xs mt-0.5">
+                                独立型のバスタブとインドア＆アウトドアシャワー。海からあがった後に温かいお風呂でリラックス。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 6: ALL-INCLUSIVE PERKS, TIPPING & EMERGENCY -->
+        <div id="section-info" class="tab-content hidden space-y-4 sm:space-y-6">
+            
+            <!-- Benefits Section -->
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-4">
+                <h2 class="text-lg sm:text-2xl font-bold text-teal-950 flex items-center gap-2">
+                    <span>🎁</span> ご予約特典 ＆ 無料利用ガイド
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 text-xs sm:text-sm">
+                    
+                    <div class="p-4 bg-rose-50/90 border border-rose-200 rounded-2xl">
+                        <div class="font-bold text-rose-900 text-sm sm:text-base mb-1.5 flex items-center gap-1">
+                            <span>💖</span> パッケージ特典 (滞在中各1回)
+                        </div>
+                        <ul class="space-y-1 text-slate-700 text-xs">
+                            <li>• <strong>サンセット・ドルフィンクルーズ</strong></li>
+                            <li>• <strong>フローティングブレックファースト</strong></li>
+                            <li>• <strong>45分 スパトリートメント</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-amber-50/90 border border-amber-200 rounded-2xl">
+                        <div class="font-bold text-amber-900 text-sm sm:text-base mb-1.5 flex items-center gap-1">
+                            <span>💍</span> ホテルハネムーン特典
+                        </div>
+                        <p class="text-slate-700 font-medium text-xs mb-1">• <strong>ベッドデコレーション</strong></p>
+                        <div class="bg-amber-100 p-2 rounded-xl text-amber-950 text-[10px] sm:text-[11px] border border-amber-200">
+                            ⚠️ チェックイン時に結婚証明書（婚姻届受理書・戸籍謄本など）の提示が必要。
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-sky-50/90 border border-sky-200 rounded-2xl">
+                        <div class="font-bold text-sky-900 text-sm sm:text-base mb-1.5 flex items-center gap-1">
+                            <span>🏄‍♂️</span> 無料アクティビティ
+                        </div>
+                        <ul class="space-y-1 text-slate-700 text-xs">
+                            <li>• SUP・カヤック (毎日1時間無料)</li>
+                            <li>• シュノーケルセット無料レンタル</li>
+                            <li>• 毎朝サンライズヨガ・ジム利用</li>
+                            <li>• ゴルフシミュレーター・カラオケ</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Tipping & Practical Guide Section -->
+            <section class="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl space-y-4">
+                <h2 class="text-lg sm:text-2xl font-bold text-teal-950 flex items-center gap-2">
+                    <span>💵</span> チップの目安 ＆ 緊急連絡先
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs sm:text-sm">
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm sm:text-base">💡 チップの目安 (米ドル現金を用意)</h3>
+                        <div class="space-y-1.5 text-xs">
+                            <div class="flex justify-between p-2 bg-white rounded-xl border border-slate-200">
+                                <span class="font-bold text-slate-800">荷物のポーター</span>
+                                <span class="text-teal-700 font-bold">3 〜 5 ドル</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-white rounded-xl border border-slate-200">
+                                <span class="font-bold text-slate-800">ハウスキーピング</span>
+                                <span class="text-teal-700 font-bold">3 〜 5 ドル (1回ごと)</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-white rounded-xl border border-slate-200">
+                                <span class="font-bold text-slate-800">バトラー / 担当者</span>
+                                <span class="text-teal-700 font-bold">10 〜 15 ドル × 泊数</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-white rounded-xl border border-slate-200">
+                                <span class="font-bold text-slate-800">スパ・各種アクティビティ</span>
+                                <span class="text-teal-700 font-bold">10 〜 20 ドル</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-slate-800 text-sm sm:text-base">📞 現地緊急連絡先</h3>
+                        <div class="p-3 bg-slate-100 rounded-xl text-[11px] sm:text-xs space-y-1 text-slate-700 border border-slate-200">
+                            <p class="font-bold text-slate-900">MALDIVES TRAVEL FACTORY (マレ)</p>
+                            <p>• TEL: +960-7785128 (サイード様 / 日本語)</p>
+                            <p>• TEL: +960-7794330 (日本語スタッフ)</p>
+                            <p>• プルマンリゾートTEL: +960 6820909</p>
+                            <p>• エス・ティー・ワールドTEL: 050-5530-6740</p>
+                        </div>
+                        <div class="p-2.5 bg-amber-50 rounded-xl text-[11px] text-amber-900 border border-amber-200 font-medium">
+                            ⚠️ マレ空港では日本円から米ドルへの両替ができません。日本の空港で1$・5$札を事前にご用意ください。
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center py-6 text-teal-950 space-y-1">
+            <p class="serif-font text-xl sm:text-2xl font-bold">Have a Magical Honeymoon in Maldives!</p>
+            <p class="text-[11px] sm:text-xs text-slate-600">OGIWARA KEISUKE様 & AYANO様 生涯忘れられない最高の思い出となりますように 🇲🇻✨</p>
+        </footer>
+
+    </div>
+
+    <!-- JS Logic for Dynamic Tabs and Filters -->
+    <script>
+        // Main Tab Switcher
+        function switchMainTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-tab').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('text-slate-700');
+            });
+
+            const selectedContent = document.getElementById(`section-${tabId}`);
+            if (selectedContent) selectedContent.classList.remove('hidden');
+
+            const selectedNav = document.getElementById(`nav-${tabId}`);
+            if (selectedNav) {
+                selectedNav.classList.add('active');
+                selectedNav.classList.remove('text-slate-700');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Schedule Filter System
+        let currentDay = 'all';
+        let currentCategory = 'all';
+
+        function showDay(day) {
+            currentDay = day;
+            document.querySelectorAll('.day-tab').forEach(btn => btn.classList.remove('active'));
+            const activeTab = document.getElementById(`day-${day}`);
+            if (activeTab) activeTab.classList.add('active');
+            applyScheduleFilters();
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            const activeFilter = document.getElementById(`filter-${cat}`);
+            if (activeFilter) activeFilter.classList.add('active');
+            applyScheduleFilters();
+        }
+
+        function applyScheduleFilters() {
+            const dayCards = document.querySelectorAll('.day-card');
+
+            dayCards.forEach(card => {
+                const cardDay = card.getAttribute('data-day');
+                const showByDay = (currentDay === 'all' || currentDay.toString() === cardDay);
+
+                if (!showByDay) {
+                    card.style.display = 'none';
+                    return;
+                }
+
+                card.style.display = 'block';
+
+                const items = card.querySelectorAll('li');
+                let visibleCount = 0;
+
+                items.forEach(item => {
+                    const cat = item.getAttribute('data-cat');
+                    if (currentCategory === 'all' || cat === currentCategory) {
+                        item.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0 && currentCategory !== 'all') {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
+### 主な変更・追加内容
+1. **「🏝️ プルマンリゾート紹介」タブの追加**:
+   - **24時間ジム & Fit Lounge**: フリーウェイトや各種有酸素マシン、ビーチ沿いの屋外BootCamp（障害物コース）、ボルダリング壁などモルディブでも屈指の充実したフィットネス施設を紹介。
+   - **インドア＆アウトドアスポーツ (Skillz)**: ゴルフシミュレーター、全天候型テニスコート、ビーチバレー、カラオケ、PlayStation 5等。
+   - **ウォータースポーツ & ハウスリーフ**: 無料のSUP・カヤック貸出、シュノーケルギア、ダイビングセンター。
+   - **スパ & ヨガ**: 水上スパ（Spa by Phytomer）やサンライズ・サンセットヨガ。
+   - **島内移動情報**: 徒歩30分の広大な自然島における「24時間バギー送迎サービス」や自転車散策についての案内。
+2. **「フォトギャラリー」の削除**: ナビゲーションおよびコンテンツセクションからギャラリーを外し、必要な解説情報をすっきりと整理しました。
